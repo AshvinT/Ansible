@@ -1,0 +1,1280 @@
+Microsoft Windows Server 2019 Base - ami-09dedd42528c4adc9
+
+You can connect remotely using this information:
+Public DNS	ec2-52-66-245-20.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+cX(?xA$XjxYCLqoe*YXx6vqVL*(l-eg=
+new password: ashvinKalburgi
+
+##############################
+
+sudo su
+
+-- install security updates
+apt-get update
+
+-- below comd install apache
+apt-get install apache2
+
+
+--- apache webpage there in below path 
+/var/www/html
+
+--
+/home/ubuntu
+
+
+ensible
+
+docker
+
+
+---- Version control system :  to know version of git
+root@ip-172-31-6-167:/home/ubuntu# git --version
+git version 2.17.1
+
+
+---- To install GIT
+apt-get install git
+
+git config --global user.name "Ashvin Thakur"
+git config --global user.email "ashvinkumar.thakur@synechron.com"
+git config -l 
+user.name=Ashvin Thakur
+user.email=ashvinkumar.thakur@synechron.com
+
+
+
+will create local repository first :
+root@ip-172-31-6-167:/home/ubuntu# mkdir repo
+root@ip-172-31-6-167:/home/ubuntu# cd repo/
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -a
+.  ..
+root@ip-172-31-6-167:/home/ubuntu/repo# git init
+Initialized empty Git repository in /home/ubuntu/repo/.git/
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -la
+total 12
+drwxr-xr-x 3 root   root   4096 May 14 06:35 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 May 14 06:33 ..
+drwxr-xr-x 7 root   root   4096 May 14 06:35 .git
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+initialized local reposotory 
+NOTE: LETS CREATE A ANY FILE 
+
+
+     remote-repo
+
+local-repo
+file system
+
+
+
+u can see untracked file which abc.txt
+
+
+"git add abc.txt    -------- now pushong on staging from file system [ tracked now ]
+
+git commit -m"My first commit
+
+git status 
+
+
+
+
+###########################################################################
+
+new remote repository creation:
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote -v
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote add origin https://github.com/AshvinT/SyneDevops1.git
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote -v
+origin  https://github.com/AshvinT/SyneDevops1.git (fetch)
+origin  https://github.com/AshvinT/SyneDevops1.git (push)
+root@ip-172-31-6-167:/home/ubuntu/repo# git push origin master
+Username for 'https://github.com': ashvint
+Password for 'https://ashvint@github.com':
+Counting objects: 16, done.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (16/16), 1.43 KiB | 1.43 MiB/s, done.
+Total 16 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/AshvinT/SyneDevops1.git
+ * [new branch]      master -> master
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.  when u change file in master branch ... to reflect on github ie on remote repository below steps:
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -l
+total 8
+-rw-r--r-- 1 root root 37 May 14 07:23 abc.txt
+-rw-r--r-- 1 root root 16 May 14 07:08 xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# vi abc.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@ip-172-31-6-167:/home/ubuntu/repo# git add .
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   abc.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"new text updated for remote repository"
+[master 12aff08] new text updated for remote repository
+ 1 file changed, 1 insertion(+)
+root@ip-172-31-6-167:/home/ubuntu/repo# git push origin master
+Username for 'https://github.com': ashvint
+Password for 'https://ashvint@github.com':
+Counting objects: 3, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 384 bytes | 384.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/AshvinT/SyneDevops1.git
+   073af12..12aff08  master -> master
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+
+
+
+
+
+
+3.  clone
+
+root@ip-172-31-6-167:/home/ubuntu# git clone https://github.com/AshvinT/Firstrepo.git
+Cloning into 'Firstrepo'...
+warning: You appear to have cloned an empty repository.
+root@ip-172-31-6-167:/home/ubuntu# ls
+Firstrepo  repo
+root@ip-172-31-6-167:/home/ubuntu# cd Firstrepo
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# ls -lrt
+total 0
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# cat >ash.txt
+this is created in unix andfor clone example
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo#
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo#
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# ls -lrt
+total 4
+-rw-r--r-- 1 root root 45 May 14 09:24 ash.txt
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git push https://github.com/AshvinT/Firstrepo.git
+error: src refspec refs/heads/master does not match any.
+error: failed to push some refs to 'https://github.com/AshvinT/Firstrepo.git'
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ash.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git add .
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   ash.txt
+
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git commit -m"clone example"
+[master (root-commit) 806b5d6] clone example
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ash.txt
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# git push origin
+Username for 'https://github.com': ashvint
+Password for 'https://ashvint@github.com':
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 266 bytes | 266.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/AshvinT/Firstrepo.git
+ * [new branch]      master -> master
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo#
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo# ls
+ash.txt
+root@ip-172-31-6-167:/home/ubuntu/Firstrepo#
+
+
+
+
+
+
+
+4. bringing branches from linux to github repository.
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote -v
+origin  https://github.com/AshvinT/SyneDevops1.git (fetch)
+origin  https://github.com/AshvinT/SyneDevops1.git (push)
+root@ip-172-31-6-167:/home/ubuntu/repo# git push origin training
+Username for 'https://github.com': ashvint
+Password for 'https://ashvint@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'training' on GitHub by visiting:
+remote:      https://github.com/AshvinT/SyneDevops1/pull/new/training
+remote:
+To https://github.com/AshvinT/SyneDevops1.git
+ * [new branch]      training -> training
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+note : now check in github ...in branch dropdown option those branches should be seen .
+
+
+
+
+
+
+
+
+
+
+####################
+SSH Key Gen Saving Process :   for not asking password everytime we try to connect remote repository:
+####################
+
+
+
+root@ip-172-31-6-167:/home/ubuntu/repo# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): /root/.ssh/id_rsa
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:a68aSJOBcONeLf+9fNTGxclVhvHtT9OpxvsGv+yZ328 root@ip-172-31-6-167
+The key's randomart image is:
++---[RSA 2048]----+
+|. o           .o+|
+| + o .        .oo|
+|  o + .       ..=|
+| . . =         +=|
+|  . + . S    o ++|
+|   . o . o  o.=.o|
+|    . . + .. =o .|
+|       o o .o ooE|
+|      ....+. .+OB|
++----[SHA256]-----+
+root@ip-172-31-6-167:/home/ubuntu/repo# cd /root/.ssh/id_rsa
+bash: cd: /root/.ssh/id_rsa: Not a directory
+root@ip-172-31-6-167:/home/ubuntu/repo# cd /root/.ssh/
+root@ip-172-31-6-167:~/.ssh# ls
+authorized_keys  id_rsa  id_rsa.pub
+root@ip-172-31-6-167:~/.ssh# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYTuhX9bDv8+LJXGYFE3LKLTjRcGdSDKk5mVQT3cnAZwBtQndlXaJpFpOE7a/d+YTe9jI2OIdRiECV7DgtEwTj4jZR3Jy15YqLzN0i8Cou2cyW/YDBIOKhOA0bgxvg9HzKsxu5hrfaBOnmWKr6TqUQ+OXPaHLLNpqS+W6P9aDL9oAKYHuEV1hs770+UWgFSYepLV3SuEepT+NKOaCRUC0U9fic5xLW898Svqn1i1Xi4/IdEZJfI9Zx9zBnIxJ2PFLK7tys8MDScVD+/TriJVARYrHAoa6S8S/frLebhkBd4TDUE4+skiYfP0buTtJXVrO9fR5AByasbQv8SadTC9F5 root@ip-172-31-6-167
+root@ip-172-31-6-167:~/.ssh#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root@ip-172-31-6-167:/home/ubuntu/repo# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): /root/.ssh/id_rsa
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:a68aSJOBcONeLf+9fNTGxclVhvHtT9OpxvsGv+yZ328 root@ip-172-31-6-167
+The key's randomart image is:
++---[RSA 2048]----+
+|. o           .o+|
+| + o .        .oo|
+|  o + .       ..=|
+| . . =         +=|
+|  . + . S    o ++|
+|   . o . o  o.=.o|
+|    . . + .. =o .|
+|       o o .o ooE|
+|      ....+. .+OB|
++----[SHA256]-----+
+
+root@ip-172-31-6-167:/home/ubuntu/repo# cd /root/.ssh/
+root@ip-172-31-6-167:~/.ssh# ls
+authorized_keys  id_rsa  id_rsa.pub
+root@ip-172-31-6-167:~/.ssh# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYTuhX9bDv8+LJXGYFE3LKLTjRcGdSDKk5mVQT3cnAZwBtQndlXaJpFpOE7a/d+YTe9jI2OIdRiECV7DgtEwTj4jZR3Jy15YqLzN0i8Cou2cyW/YDBIOKhOA0bgxvg9HzKsxu5hrfaBOnmWKr6TqUQ+OXPaHLLNpqS+W6P9aDL9oAKYHuEV1hs770+UWgFSYepLV3SuEepT+NKOaCRUC0U9fic5xLW898Svqn1i1Xi4/IdEZJfI9Zx9zBnIxJ2PFLK7tys8MDScVD+/TriJVARYrHAoa6S8S/frLebhkBd4TDUE4+skiYfP0buTtJXVrO9fR5AByasbQv8SadTC9F5 root@ip-172-31-6-167
+
+NOTE:  GOTO GITHUB SETTINGS -> DEPLOYE KEYS -> PASTE ABOVE KEY IN TEXT BOX -> SAVE 
+
+root@ip-172-31-6-167:~/.ssh# cd /home/ubuntu
+root@ip-172-31-6-167:/home/ubuntu# ls repo
+abc.txt  xyx.txt
+root@ip-172-31-6-167:/home/ubuntu# cd repo/
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -l
+total 8
+-rw-r--r-- 1 root root 37 May 14 09:37 abc.txt
+-rw-r--r-- 1 root root 16 May 14 07:08 xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote add git@github.com:ashvint/SyneDevops1.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote add origin git@github.com:ashvint/SyneDevops1.git
+fatal: remote origin already exists.
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote add origin_ssh git@github.com:ashvint/SyneDevops1.git
+root@ip-172-31-6-167:/home/ubuntu/repo# git remote -v
+origin  https://github.com/AshvinT/SyneDevops1.git (fetch)
+origin  https://github.com/AshvinT/SyneDevops1.git (push)
+origin_ssh      git@github.com:ashvint/SyneDevops1.git (fetch)
+origin_ssh      git@github.com:ashvint/SyneDevops1.git (push)
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo# cat > ssh_sample
+asdasd
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ssh_sample
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/repo# git add .
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"for ssh ex"
+[training bb54632] for ssh ex
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ssh_sample
+root@ip-172-31-6-167:/home/ubuntu/repo# git push origin_ssh training
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: This repository moved. Please use the new location:
+remote:   git@github.com:AshvinT/SyneDevops1.git
+To github.com:ashvint/SyneDevops1.git
+   417b8cb..bb54632  training -> training
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+
+
+2nd time :
+root@ip-172-31-6-167:/home/ubuntu/repo# cat > ritesh.txt
+ashvin here
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ritesh.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/repo# git add .
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"new file added"
+[training cbecafb] new file added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ritesh.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git push origin_ssh training
+Counting objects: 3, done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 358 bytes | 358.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: This repository moved. Please use the new location:
+remote:   git@github.com:AshvinT/SyneDevops1.git
+To github.com:ashvint/SyneDevops1.git
+   bb54632..cbecafb  training -> training
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+user1
+Access key ID  AKIAUNR5OHCMWUES5FHJ
+Secret access key   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
+
+
+apt-get install awscli
+region id: ap-south-1
+
+
+
+root@ip-172-31-6-167:/home/ubuntu# aws --version
+aws-cli/1.14.44 Python/3.6.7 Linux/4.15.0-1032-aws botocore/1.8.48
+root@ip-172-31-6-167:/home/ubuntu# aws configure
+AWS Access Key ID [None]: AKIAUNR5OHCMWUES5FHJ
+AWS Secret Access Key [None]: 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
+Default region name [None]: ap-south-1
+Default output format [None]: json
+root@ip-172-31-6-167:/home/ubuntu#
+
+
+
+
+
+
+
+
+
+
+
+
+to create instance with command prompt : 
+aws ec2 describe-instances      [ this will bring ur instances keys ]
+aws ec2 run-instances --image-id ami-1a2b3c4d --count 1 --instance-type t2.micro --key-name MyKeyPair --security-groups MySecurityGroup
+aws ec2 run-instances --image-id ami-007d5db58754fa284 --count 1 --instance-type t2.micro  --key-name AshvinTraining --security-groups launch-wizard-7 
+
+
+
+we can start and stop instances :
+aws ec2 stop-instances --instance-ids <get_instnace_id_on_screen>
+aws ec2 start-instances --instance-ids <get_instnace_id_on_screen>
+
+
+aws ec2 stop-instances --instance-ids i-05a1273b27b053e64
+aws ec2 start-instances --instance-ids i-05a1273b27b053e64
+
+
+
+apt-get install mysql-client
+Endpoint
+mydb.cwxixn1is4bl.ap-south-1.rds.amazonaws.com
+
+
+mysql :
+login unix :
+]sudo su
+root@ip-172-31-31-143:/home/ubuntu# apt-get update
+root@ip-172-31-31-143:/home/ubuntu# apt-get install mysql-client
+root@ip-172-31-31-143:/home/ubuntu# mysql -h mydb.cwxixn1is4bl.ap-south-1.rds.amazonaws.com -u root -p
+Enter password:12345678
+
+mysql> create database ashvindb ;
+
+mysql> show databases;
+
+
+
+#########################################################################################################################
+
+https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+
+https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe
+
+#!/bin/bash
+mkdir /home/ubuntu/test
+mkdir /home/ubuntu/test2
+
+
+
+sudo su
+apt-get update
+
+apt-get install apache2
+cd /var/www/html
+
+
+
+git config --global user.name "Your Name"
+git config --global user.email "Your email"
+
+
+
+
+
+
+
+Create a set of SSH key for the machine using following command
+  ssh-keygen
+Now this has generated pair of keys, one is public & other is private
+Now we need to copy the public key and add it in the deploy key
+section of our remote repo
+The location of our keys will be  /root/.ssh/
+Copy the content of id_rsa.pub
+Add the copied key in your respective repository.
+If you are using older repositories, you need to add the remote for
+SSH url.
+so add using git remote add origin (your_url)
+then try pushing your code
+
+
+git remote add origin (your repo url)
+git push origin master
+
+
+
+
+aws ec2 describe-instances
+
+
+aws ec2 run-instances --image-id ami-1a2b3c4d --count 1 --instance-type t2.micro --key-name MyKeyPair --security-groups MySecurityGroup
+aws ec2 run-instances --image-id ami-0c55b159cbfafe1f0  --count 1 --instance-type t2.micro --key-name MyKeyPair --security-groups MySecurityGroup
+
+ami-0c55b159cbfafe1f0
+
+###################################################################################
+
+
+3rd day : Ansible:
+
+Ansible master installation and configuration: 
+
+apt-get update
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+apt-add-repository "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main"
+apt-get update
+apt-get install ansible
+
+ansible --version
+
+
+
+
+
+
+Master and client :
+
+
+Master :
+root@ip-172-31-13-44:/etc/ansible# sudo su
+root@ip-172-31-13-44:/etc/ansible# whoami
+root
+root@ip-172-31-13-44:/etc/ansible# cd ..
+root@ip-172-31-13-44:/etc# cd /home/ubuntu
+root@ip-172-31-13-44:/home/ubuntu# sudo su
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu# hostnamectl set-hostname master.example.com
+root@ip-172-31-13-44:/home/ubuntu# hostname
+master.example.com
+root@ip-172-31-13-44:/home/ubuntu# exit
+exit
+root@ip-172-31-13-44:/home/ubuntu# sudo su
+root@master:/home/ubuntu#
+
+
+
+
+
+Cliet:  While creating stance in security group add "ALL_TRAFFIC"
+ubuntu@ip-172-31-29-54:~$ sudo su
+root@ip-172-31-29-54:/home/ubuntu# hostname
+ip-172-31-29-54
+root@ip-172-31-29-54:/home/ubuntu#
+root@ip-172-31-29-54:/home/ubuntu#
+root@ip-172-31-29-54:/home/ubuntu#
+root@ip-172-31-29-54:/home/ubuntu# hostnamectl  set-hostname client.example.com
+root@ip-172-31-29-54:/home/ubuntu# hostname
+client.example.com
+root@ip-172-31-29-54:/home/ubuntu#
+root@ip-172-31-29-54:/home/ubuntu#
+root@ip-172-31-29-54:/home/ubuntu# exit
+exit
+ubuntu@ip-172-31-29-54:~$ sudo su
+root@client:/home/ubuntu#
+
+
+
+
+We need to generate the ssh keys in master It will generate it in /root/.ssh/ folder.
+Now we need to copy the contents of id_rsa.pub file.
+
+
+goto the client machine,
+goto /root/.ssh folder
+open authorized_keys file
+Add the cpoied content over here without messing up the existing content.
+save it and close it.
+
+
+master:
+root@master:/home/ubuntu# cd  /root/.ssh/
+
+
+
+root@master:~/.ssh# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGDofh/65hQArMZTKHZjCKqFMaeXDGCpBgfiFf5IOokTxl60ymmcCQI1j1vocualrGDM2z6GC7XOIEW929Slq65/Fl39ek7h6g3BDCp1CEWw/ik1g2aMo1gM1VYUUy24tZmTf0TE2ABbJa1iUpfDZslPLMs5w7cgqGG1eMZKd+1gSthT/aivL2PU6ljgINp/zHBwusUm4ArbDRO18voQG76GQPAOZBI1E9jOtFlV87zuohr2o0TOACA2uvGgSk7bed3QLXLniyebgvlh5pF2+EV9sYDgK8lEzyDQ7NnCV6I/YYYTbkDhVtkRMv4UL0mYcE0hbqjCxb/qJSJMFtyOLj root@master.example.com
+root@master:~/.ssh# ssh root@172.31.29.54
+The authenticity of host '172.31.29.54 (172.31.29.54)' can't be established.
+
+
+
+
+client:
+root@client:/home/ubuntu# sudo su
+root@client:/home/ubuntu# cd /root/.ssh/
+root@client:~/.ssh# ls -l
+total 4
+-rw------- 1 root root 551 May 15 06:28 authorized_keys
+root@client:~/.ssh# vi authorized_keys
+root@client:~/.ssh#
+root@client:~/.ssh#
+root@client:~/.ssh#
+
+
+
+
+-----------------------------------
+client:  inet 172.31.29.54
+from  master : do below command 
+ssh root@172.31.29.54
+
+
+
+----
+to set alisa :
+cat /etc/hosts
+IP Alias_Name
+172.31.29.54  client
+
+root@client:~# cat /etc/hosts
+127.0.0.1 localhost
+172.31.29.54  client
+
+and u can do as this on master :  
+root
+
+
+
+
+-----------------------------
+Ansible grouping :
+
+on master :
+root@master:~/.ssh# vi /etc/ansible/hosts
+[web]
+client
+
+root@master:~/.ssh# ansible web -m ping
+client | FAILED! => {
+    "changed": false,
+    "module_stderr": "Shared connection to client closed.\r\n",
+    "module_stdout": "/bin/sh: 1: /usr/bin/python: not found\r\n",
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error",
+    "rc": 127
+}
+root@master:~/.ssh#
+
+Note: error boz python not avialbe on client machine. lets install python on client
+
+
+
+on client:
+
+root@client:~/.ssh# apt-get update
+root@client:/home/ubuntu# apt-get install python
+
+on master:
+root@master:~/.ssh# ansible web -m ping
+it successfully pinged now ..ping-pong came!
+
+so we have done with Ansible communication test successfully.
+
+to check the facts:
+ansible group_name -m setup
+ie
+root@master:~/.ssh# ansible web -m setup
+
+
+ansible-doc module 
+ex:
+ansible-doc ping
+
+
+executing command on target or remote machine or client 
+ansible target -a "uname"
+ansible web -a "uname"
+
+root@master:/home/ubuntu# ansible web -a "useradd thakur"
+
+--------
+
+* Lets use module directly instead of commands
+root@master:/home/ubuntu# ansible web -m user -a"name=ashvin state=present"
+client | CHANGED => {
+    "changed": true,
+    "comment": "",
+    "create_home": true,
+    "group": 1002,
+    "home": "/home/ashvin",
+    "name": "ashvin",
+    "shell": "/bin/sh",
+    "state": "present",
+    "system": false,
+    "uid": 1002
+}
+root@master:/home/ubuntu# ansible-doc user
+
+
+
+
+
+file moduel : this create file like touch command .
+
+
+
+
+
+
+
+
+
+let us create a user on client mahcine:
+
+root@master:/home/ubuntu# ansible web -m file -a "name=/tmp/chetan state=touch"
+client | CHANGED => {
+    "changed": true,
+    "dest": "/tmp/chetan",
+    "gid": 0,
+    "group": "root",
+    "mode": "0644",
+    "owner": "root",
+    "size": 0,
+    "state": "file",
+    "uid": 0
+}
+
+
+TO VERIFY:
+root@master:/home/ubuntu# ansible web -a"ls /tmp"
+client | CHANGED | rc=0 >>
+ansible_command_payload_B2y6fZ
+chetan
+systemd-private-2b684517334049e0aa937763c2414f17-systemd-resolved.service-FSJA90
+systemd-private-2b684517334049e0aa937763c2414f17-systemd-timesyncd.service-BlEGSG
+
+root@master:/home/ubuntu# ansible web -a"cat  /tmp/chetan"
+client | CHANGED | rc=0 >>
+
+
+root@master:/home/ubuntu# ansible web -a"ls -ll /tmp"
+
+
+Ansible commands
+Ansible - is an extra simple tool/framework/API for doing remote things over SSH.
+
+Ansibledoc
+
+Ansible-playbook
+
+Ansible-vault
+
+Ansible-galaxy
+
+Ansible-console : todo adhoc tasks. read evalute print loop  [REPL]
+
+
+######################################################################################################
+
+CONFIGURING ANSIBLE:
+
+YAML structure
+-> take care of identitation.
+-> : colons
+-> dashes
+
+
+ANSIBLE PLAYBOOK
+-> written in YAML format.with sequential instructions to perform operations on managed nodes.
+-> devided into 3 parts 
+1.start of play [  which host need to target includes hst , variables, connections and users ]
+2.task list [ list down which all task need to perform]
+3.handlers [
+
+
+play book is collections of play [ 1 play means set of above 3 steps]
+
+
+
+
+mkdir playbooks
+creating a playbook to create a user:
+vi user.yaml
+
+- hosts: web
+  tasks: 
+    - name: create a user
+      user:
+	name: synechron
+	state: present
+
+
+##############################################################
+LAB:
+
+ubuntu@master:~$ sudo su
+root@master:/home/ubuntu# apt-get update
+
+root@master:/home/ubuntu# mkdir playbooks
+root@master:/home/ubuntu# cd playbooks/
+root@master:/home/ubuntu/playbooks# vi user.yaml
+root@master:/home/ubuntu/playbooks# vi user.yaml
+---
+- hosts: web
+  tasks:
+   - name: create a user
+     user:
+       name: synechron
+       state: present
+~
+~
+~
+~
+~
+~root@master:/home/ubuntu/playbooks# ansible-playbook user.yaml --syntax-check
+
+abive comd for syntax checking
+
+root@master:/home/ubuntu/playbooks# ansible-playbook user.yaml --check
+
+sample output
+
+TO execute use below command :
+
+root@master:/home/ubuntu/playbooks# ansible-playbook user.yaml
+
+PLAY [web] *************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************
+ok: [client]
+
+TASK [create a user] ***************************************************************************************************************************************************
+changed: [client]
+
+PLAY RECAP *************************************************************************************************************************************************************
+client                     : ok=2    changed=1    unreachable=0    failed=0
+
+
+
+
+to confirm result :
+root@master:/home/ubuntu/playbooks# ansible web -a"ls /home"
+client | CHANGED | rc=0 >>
+ashvin
+synechron
+ubuntu
+
+
+
+
+
+note: username as synechron created on client machine ie on web 
+
+----------------------------------
+
+Now lets create a group :
+
+root@master:/home/ubuntu/playbooks# vi user.yaml
+
+---
+- hosts: web
+  tasks:
+   - name: create a user
+     user:
+       name: synechron
+       state: present
+   - name: create a group
+     group:
+       name: synechron2
+       state: present
+
+
+syntax check :
+root@master:/home/ubuntu/playbooks# ansible-playbook user.yaml --syntax-check
+
+execution:
+root@master:/home/ubuntu/playbooks# ansible-playbook user.yaml
+
+
+
+to confirm output ie group created or not bolke :
+root@master:/home/ubuntu/playbooks# ansible web -a"cat /etc/group"
+
+synechron:x:1003:
+synechron2:x:1004:
+
+
+to know more options related to group module is :
+root@master:/home/ubuntu/playbooks# ansible-doc group
+
+###########################################################
+PACKAGE
+###########################################################
+
+PACKAGE MODULE OR APP MODULE CAN BE USED TO INSTALL PACKAGE MODULE
+package /apt
+
+
+
+
+root@master:/home/ubuntu/playbooks# vi package.yaml
+---
+-  hosts: web
+   tasks:
+     - name: install ntp
+       apt:
+         name: ntp
+         state: present
+
+
+note: instead of ntp u can also install   mysql-client.
+you can replace apt as package in above script 
+
+root@master:/home/ubuntu/playbooks# vi package.yaml
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml --syntax-check
+
+playbook: package.yaml
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml
+
+
+to check ntp service is started or not:
+ansible  web -m service "-a "name=ntp"
+
+###########################################################
+
+
+
+
+
+###########################################################
+let us check ntp service  started or not : [  reloaded, restarted, started, stopped ]
+root@master:/home/ubuntu/playbooks# vi package.yaml
+
+---
+-  hosts: web
+   tasks:
+     - name: install ntp
+       apt:
+         name: ntp
+         state: present
+     - name: service check
+       service:
+         name: ntp
+         state: started
+
+
+
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml --syntax-check
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml
+
+to confirm 
+root@master:/home/ubuntu/playbooks# ansible web -a "service ntp status"
+
+
+###########################################################
+
+File Module :
+let us create file and directory in single playbook :
+vi file.yaml
+---
+-  hosts: web
+   tasks:
+     - name: creating FILE
+       file:
+         name: /home/ubuntu/test
+         state: touch
+     - name: creating directory
+       file       
+         name: /home/ubuntu/testdir
+         mode: 0777
+         state: directory
+
+to check :
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml --syntax-check
+to run:
+root@master:/home/ubuntu/playbooks# ansible-playbook package.yaml
+
+to confirm result:
+root@master:/home/ubuntu/playbooks# ansible web -a"ls /home/ubuntu"
+client | CHANGED | rc=0 >>
+test
+testdir
+
+NOte: since we have given state as touch .... file date is getting updated continuosly.[as it update metadata ie timestamp]
+
+###########################################################
+
+create a user names Devops
+Install : apache2 and make sure it is running 
+create a directory named webapp in /var/www/html with permissions 0777
+create a file named ïndex.html"inside directory which you created above.
+
+
+
+
+
+vi userdev.yaml
+
+---
+- hosts: web
+  tasks:
+   - name: create a user
+     user:
+       name: devops
+       state: present
+   - name: install apache
+     package:
+       name: apache2
+       state: present
+   - name: service check for apache2
+     service:
+       name: apache2
+       state: started
+   - name: creating directory
+     file:
+       name: /var/www/html/webapp
+       mode: 0777
+       state: directory
+   - name: creating FILE
+     file:
+       name: /var/www/html/webapp/ïndex.html
+       state: touch
+
+
+
+to confirm user creation:
+ansible web -a"ls /home"
+to confirm service running:
+root@master:/home/ubuntu/playbooks# ansible web -a "service apache2 status"
+to confirm file and directory:
+ansible web -a"ls /home/ubuntu"
+
+
+
+###########################################################
+I have copy in master and i want to load into all nodes.
+for this there is module called "copy"
+
+vi apache.yaml
+
+---
+- hosts: web
+  tasks:
+   - name: install apache
+     apt:
+       name: apache2
+       state: present
+   - name: copy file
+     copy:
+       src: copy.html
+       dest: /var/www/html/
+   - name: template module to copy file
+     template:
+       src: copy.html.j2
+       dest: /var/www/html/template.html
+
+
+
+
+vi copy.html
+<H1> Welcome to {{ ansible_hostname}} <H1>
+
+
+vi copy.html.j2
+<H1> Welcome to {{ ansible_hostname}} <H1>
+
+
+moral :  it is taking values of hostname dynamically ie 
+
+
+run:  take client public ip ie http://13.233.85.233/copy.html
+by default index.html run as webpage of public ip we are giving  path of copy.html
+now run
+http://13.233.85.233/template.html
+output : observe clent hostname s taking dynamically.
+
+
+###########################################################
+
+Handlers:
+
+handlers executed only once in playbook.
+
+
+
+user
+instal
+copy->handler
+directory
+
+
+handlers.yaml
+
+
+---
+- hosts: web
+  tasks:
+    - name: copy some config
+      copy:
+        src: copy.html
+        dest: /tmp/
+      notify:
+        - restart-apache
+    - name: directory
+      file:
+        name: /tmp/test3
+        state: directory
+  handlers:
+    - name: restart-apache
+      service:
+        name: apache2
+        state: restarted
+
+
+root@master:/home/ubuntu/playbooks# ansible-playbook handlers.yaml
+NOte:  if you observer , Handler part exeute only once per program ..... it execute again when there is change in file . 
+in this example , try changing copy.html file by adding some content .... then again execute handles.yaml .... then again Handler part execute .
+
+
+
+
+
+###########################################################
+Ansible Variable Overview:
+
+vi variable.yaml
+
+
+---
+- hosts: web
+  vars:
+    user1: Thakur
+    user2: Shora
+  tasks:
+    - name: create user {{ user1 }}
+      user:
+        name: "{{ user1 }}"
+        state: present
+    - name: create user {{ user1 }}
+      user:
+        name: "{{ user1 }}"
+        state: present
+
+
+
+To confirm result: 
+root@master:/home/ubuntu/playbooks# ansible web -a "ls -l /home"
+client | CHANGED | rc=0 >>
+total 24
+drwxr-xr-x 2 Shora     Shora     4096 May 15 11:44 Shora
+drwxr-xr-x 2 Thakur    Thakur    4096 May 15 11:42 Thakur
+
+
+
+###########################################################
+
+------------multi users
+
+
+- hosts: web
+  tasks:
+    - name: add several users
+      user:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - testuser1
+        - testuser2
+    - name: multiple packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - apache2
+        - mysql-client
+        - vim
+        - gcc
+
+
+ansible web -a "ls -l /home"
+###########################################################
+
+few servers are  ubuntu based, few are linux , few are windows ....based on condition we want to execute some tasks .
+
+Ansible Facts:
+
+Ansible Roles:
+roles  are the way to keep Ansible Playbooks well oraginized.
+role directory structure allow to load tasks , hnadlers, variables , static files etc .
+
+
+
+###########################################################
+https://github.com/AshvinT/Ansible.git

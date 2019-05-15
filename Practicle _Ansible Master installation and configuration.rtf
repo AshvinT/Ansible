@@ -1,0 +1,278 @@
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-1032-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed May 15 05:33:15 UTC 2019
+
+  System load:  0.13              Processes:           86
+  Usage of /:   13.6% of 7.69GB   Users logged in:     0
+  Memory usage: 14%               IP address for eth0: 172.31.13.44
+  Swap usage:   0%
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-13-44:~$ sudo su
+root@ip-172-31-13-44:/home/ubuntu# apt-get update
+Hit:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Get:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Get:4 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main Sources [829 kB]
+Get:6 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Sources [9051 kB]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/main Sources [88.0 kB]
+Get:8 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/restricted Sources [5324 B]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/restricted Sources [1504 B]
+Get:10 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Sources [181 kB]
+Get:11 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+Get:12 http://security.ubuntu.com/ubuntu bionic-security/multiverse Sources [2744 B]
+Get:13 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [129 kB]
+Get:14 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [334 kB]
+Get:15 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]
+Get:16 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [120 kB]
+Get:17 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [4296 B]
+Get:18 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [2192 B]
+Get:19 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+Get:20 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [243 kB]
+Get:21 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+Get:22 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Sources [4612 B]
+Get:23 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Sources [268 kB]
+Get:24 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Sources [238 kB]
+Get:25 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Sources [2068 B]
+Get:26 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [613 kB]
+Get:27 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [139 kB]
+Get:28 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [225 kB]
+Get:29 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [6996 B]
+Get:30 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [4004 B]
+Get:31 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [934 kB]
+Get:32 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [2060 B]
+Get:33 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [273 kB]
+Get:34 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [6644 B]
+Get:35 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [3556 B]
+Get:36 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main Sources [984 B]
+Get:37 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Sources [2068 B]
+Get:38 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [1024 B]
+Get:39 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [448 B]
+Get:40 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [3492 B]
+Get:41 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [1604 B]
+Fetched 27.7 MB in 8s (3668 kB/s)
+Reading package lists... Done
+root@ip-172-31-13-44:/home/ubuntu# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+Executing: /tmp/apt-key-gpghome.NV8RVPiHYZ/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+gpg: key 93C4A3FD7BB9C367: public key "Launchpad PPA for Ansible, Inc." imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+root@ip-172-31-13-44:/home/ubuntu# apt-add-repository "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
+> ^C
+root@ip-172-31-13-44:/home/ubuntu# apt-add-repository "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main"
+Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Get:4 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic InRelease [15.9 kB]
+Hit:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Get:6 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main amd64 Packages [544 B]
+Get:7 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main Translation-en [344 B]
+Fetched 16.8 kB in 2s (7682 B/s)
+Reading package lists... Done
+root@ip-172-31-13-44:/home/ubuntu# apt-get update
+Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:2 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic InRelease
+Hit:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:4 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Reading package lists... Done
+root@ip-172-31-13-44:/home/ubuntu# apt-get install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-asn1crypto python-cffi-backend python-crypto python-cryptography python-enum34
+  python-httplib2 python-idna python-ipaddress python-jinja2 python-markupsafe python-minimal python-paramiko python-pkg-resources python-pyasn1 python-setuptools
+  python-six python-yaml python2.7 python2.7-minimal sshpass
+Suggested packages:
+  python-doc python-tk python-crypto-doc python-cryptography-doc python-cryptography-vectors python-enum34-doc python-jinja2-doc python-gssapi python-setuptools-doc
+  python2.7-doc binutils binfmt-support
+The following NEW packages will be installed:
+  ansible libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python python-asn1crypto python-cffi-backend python-crypto python-cryptography python-enum34
+  python-httplib2 python-idna python-ipaddress python-jinja2 python-markupsafe python-minimal python-paramiko python-pkg-resources python-pyasn1 python-setuptools
+  python-six python-yaml python2.7 python2.7-minimal sshpass
+0 upgraded, 25 newly installed, 0 to remove and 110 not upgraded.
+Need to get 9489 kB of archives.
+After this operation, 59.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main amd64 ansible all 2.7.10-1ppa~bionic [3943 kB]
+Get:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-minimal amd64 2.7.15~rc1-1ubuntu0.1 [334 kB]
+Get:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7-minimal amd64 2.7.15~rc1-1ubuntu0.1 [1304 kB]
+Get:4 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-minimal amd64 2.7.15~rc1-1 [28.1 kB]
+Get:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-stdlib amd64 2.7.15~rc1-1ubuntu0.1 [1912 kB]
+Get:6 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7 amd64 2.7.15~rc1-1ubuntu0.1 [238 kB]
+Get:7 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libpython-stdlib amd64 2.7.15~rc1-1 [7620 B]
+Get:8 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python amd64 2.7.15~rc1-1 [140 kB]
+Get:9 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-markupsafe amd64 1.0-1build1 [13.0 kB]
+Get:10 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-jinja2 all 2.10-1 [94.6 kB]
+Get:11 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-yaml amd64 3.12-1build2 [115 kB]
+Get:12 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-asn1crypto all 0.24.0-1 [72.7 kB]
+Get:13 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-cffi-backend amd64 1.11.5-1 [63.4 kB]
+Get:14 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-enum34 all 1.1.6-2 [34.8 kB]
+Get:15 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-idna all 2.6-1 [32.4 kB]
+Get:16 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-ipaddress all 1.0.17-1 [18.2 kB]
+Get:17 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-six all 1.11.0-2 [11.3 kB]
+Get:18 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-cryptography amd64 2.1.4-1ubuntu1.2 [221 kB]
+Get:19 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-pyasn1 all 0.4.2-3 [46.7 kB]
+Get:20 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-paramiko all 2.0.0-1ubuntu1.2 [110 kB]
+Get:21 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-httplib2 all 0.9.2+dfsg-1ubuntu0.1 [34.7 kB]
+Get:22 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-crypto amd64 2.6.1-8ubuntu2 [244 kB]
+Get:23 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-pkg-resources all 39.0.1-2 [128 kB]
+Get:24 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-setuptools all 39.0.1-2 [329 kB]
+Get:25 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 sshpass amd64 1.06-1 [10.5 kB]
+Fetched 9489 kB in 51s (185 kB/s)
+Selecting previously unselected package libpython2.7-minimal:amd64.
+(Reading database ... 56574 files and directories currently installed.)
+Preparing to unpack .../0-libpython2.7-minimal_2.7.15~rc1-1ubuntu0.1_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.15~rc1-1ubuntu0.1) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../1-python2.7-minimal_2.7.15~rc1-1ubuntu0.1_amd64.deb ...
+Unpacking python2.7-minimal (2.7.15~rc1-1ubuntu0.1) ...
+Selecting previously unselected package python-minimal.
+Preparing to unpack .../2-python-minimal_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package libpython2.7-stdlib:amd64.
+Preparing to unpack .../3-libpython2.7-stdlib_2.7.15~rc1-1ubuntu0.1_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.15~rc1-1ubuntu0.1) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../4-python2.7_2.7.15~rc1-1ubuntu0.1_amd64.deb ...
+Unpacking python2.7 (2.7.15~rc1-1ubuntu0.1) ...
+Selecting previously unselected package libpython-stdlib:amd64.
+Preparing to unpack .../5-libpython-stdlib_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up libpython2.7-minimal:amd64 (2.7.15~rc1-1ubuntu0.1) ...
+Setting up python2.7-minimal (2.7.15~rc1-1ubuntu0.1) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python.
+(Reading database ... 57321 files and directories currently installed.)
+Preparing to unpack .../00-python_2.7.15~rc1-1_amd64.deb ...
+Unpacking python (2.7.15~rc1-1) ...
+Selecting previously unselected package python-markupsafe.
+Preparing to unpack .../01-python-markupsafe_1.0-1build1_amd64.deb ...
+Unpacking python-markupsafe (1.0-1build1) ...
+Selecting previously unselected package python-jinja2.
+Preparing to unpack .../02-python-jinja2_2.10-1_all.deb ...
+Unpacking python-jinja2 (2.10-1) ...
+Selecting previously unselected package python-yaml.
+Preparing to unpack .../03-python-yaml_3.12-1build2_amd64.deb ...
+Unpacking python-yaml (3.12-1build2) ...
+Selecting previously unselected package python-asn1crypto.
+Preparing to unpack .../04-python-asn1crypto_0.24.0-1_all.deb ...
+Unpacking python-asn1crypto (0.24.0-1) ...
+Selecting previously unselected package python-cffi-backend.
+Preparing to unpack .../05-python-cffi-backend_1.11.5-1_amd64.deb ...
+Unpacking python-cffi-backend (1.11.5-1) ...
+Selecting previously unselected package python-enum34.
+Preparing to unpack .../06-python-enum34_1.1.6-2_all.deb ...
+Unpacking python-enum34 (1.1.6-2) ...
+Selecting previously unselected package python-idna.
+Preparing to unpack .../07-python-idna_2.6-1_all.deb ...
+Unpacking python-idna (2.6-1) ...
+Selecting previously unselected package python-ipaddress.
+Preparing to unpack .../08-python-ipaddress_1.0.17-1_all.deb ...
+Unpacking python-ipaddress (1.0.17-1) ...
+Selecting previously unselected package python-six.
+Preparing to unpack .../09-python-six_1.11.0-2_all.deb ...
+Unpacking python-six (1.11.0-2) ...
+Selecting previously unselected package python-cryptography.
+Preparing to unpack .../10-python-cryptography_2.1.4-1ubuntu1.2_amd64.deb ...
+Unpacking python-cryptography (2.1.4-1ubuntu1.2) ...
+Selecting previously unselected package python-pyasn1.
+Preparing to unpack .../11-python-pyasn1_0.4.2-3_all.deb ...
+Unpacking python-pyasn1 (0.4.2-3) ...
+Selecting previously unselected package python-paramiko.
+Preparing to unpack .../12-python-paramiko_2.0.0-1ubuntu1.2_all.deb ...
+Unpacking python-paramiko (2.0.0-1ubuntu1.2) ...
+Selecting previously unselected package python-httplib2.
+Preparing to unpack .../13-python-httplib2_0.9.2+dfsg-1ubuntu0.1_all.deb ...
+Unpacking python-httplib2 (0.9.2+dfsg-1ubuntu0.1) ...
+Selecting previously unselected package python-crypto.
+Preparing to unpack .../14-python-crypto_2.6.1-8ubuntu2_amd64.deb ...
+Unpacking python-crypto (2.6.1-8ubuntu2) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../15-python-pkg-resources_39.0.1-2_all.deb ...
+Unpacking python-pkg-resources (39.0.1-2) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../16-python-setuptools_39.0.1-2_all.deb ...
+Unpacking python-setuptools (39.0.1-2) ...
+Selecting previously unselected package sshpass.
+Preparing to unpack .../17-sshpass_1.06-1_amd64.deb ...
+Unpacking sshpass (1.06-1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../18-ansible_2.7.10-1ppa~bionic_all.deb ...
+Unpacking ansible (2.7.10-1ppa~bionic) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Setting up sshpass (1.06-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.15~rc1-1ubuntu0.1) ...
+Setting up python2.7 (2.7.15~rc1-1ubuntu0.1) ...
+Setting up libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up python (2.7.15~rc1-1) ...
+Setting up python-idna (2.6-1) ...
+Setting up python-yaml (3.12-1build2) ...
+Setting up python-asn1crypto (0.24.0-1) ...
+Setting up python-crypto (2.6.1-8ubuntu2) ...
+Setting up python-pyasn1 (0.4.2-3) ...
+Setting up python-pkg-resources (39.0.1-2) ...
+Setting up python-markupsafe (1.0-1build1) ...
+Setting up python-httplib2 (0.9.2+dfsg-1ubuntu0.1) ...
+Setting up python-cffi-backend (1.11.5-1) ...
+Setting up python-six (1.11.0-2) ...
+Setting up python-enum34 (1.1.6-2) ...
+Setting up python-ipaddress (1.0.17-1) ...
+Setting up python-setuptools (39.0.1-2) ...
+Setting up python-jinja2 (2.10-1) ...
+Setting up python-cryptography (2.1.4-1ubuntu1.2) ...
+Setting up python-paramiko (2.0.0-1ubuntu1.2) ...
+Setting up ansible (2.7.10-1ppa~bionic) ...
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu# ansible --version
+ansible 2.7.10
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.15rc1 (default, Nov 12 2018, 14:31:15) [GCC 7.3.0]
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#
+root@ip-172-31-13-44:/home/ubuntu#

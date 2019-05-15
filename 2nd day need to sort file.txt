@@ -1,0 +1,362 @@
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch training
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+  training
+root@ip-172-31-6-167:/home/ubuntu/repo# to delete branchy
+to: command not found
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch -d training
+Deleted branch training (was f0cc8be).
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout training
+error: pathspec 'training' did not match any file(s) known to git.
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch training
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+  training
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout training
+Switched to branch 'training'
+root@ip-172-31-6-167:/home/ubuntu/repo# vi xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        xyx.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/repo# git add .
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   xyx.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"trainig brnach commit"
+[training b8e828d] trainig brnach commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout master
+Switched to branch 'master'
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo# ls
+abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo#
+
+
+to know all git commands 
+$] git
+
+
+#####################################################################
+
+
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-1032-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue May 14 06:25:18 UTC 2019
+
+  System load:  0.07              Processes:           86
+  Usage of /:   16.3% of 7.69GB   Users logged in:     0
+  Memory usage: 16%               IP address for eth0: 172.31.6.167
+  Swap usage:   0%
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+112 packages can be updated.
+45 updates are security updates.
+
+
+Last login: Tue May 14 05:21:48 2019 from 202.59.231.33
+ubuntu@ip-172-31-6-167:~$ sudo su
+root@ip-172-31-6-167:/home/ubuntu# git -- version
+unknown option: --
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+root@ip-172-31-6-167:/home/ubuntu# get --version
+
+Command 'get' not found, but there are 18 similar ones.
+
+root@ip-172-31-6-167:/home/ubuntu# git --version
+git version 2.17.1
+root@ip-172-31-6-167:/home/ubuntu#
+root@ip-172-31-6-167:/home/ubuntu#
+root@ip-172-31-6-167:/home/ubuntu# git config --global user.name "Ashvin Thakur"
+root@ip-172-31-6-167:/home/ubuntu# git config --global user.email "ashvinkumar.thakur@synechron.com"
+root@ip-172-31-6-167:/home/ubuntu#
+root@ip-172-31-6-167:/home/ubuntu# git config 1
+error: key does not contain a section: 1
+root@ip-172-31-6-167:/home/ubuntu# git config -1
+error: unknown switch `1'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+root@ip-172-31-6-167:/home/ubuntu# git config -l
+user.name=Ashvin Thakur
+user.email=ashvinkumar.thakur@synechron.com
+root@ip-172-31-6-167:/home/ubuntu#
+root@ip-172-31-6-167:/home/ubuntu# whoami
+root
+root@ip-172-31-6-167:/home/ubuntu# mkdir repo
+root@ip-172-31-6-167:/home/ubuntu# cd repo/
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -a
+.  ..
+root@ip-172-31-6-167:/home/ubuntu/repo# git init
+Initialized empty Git repository in /home/ubuntu/repo/.git/
+root@ip-172-31-6-167:/home/ubuntu/repo# ls -la
+total 12
+drwxr-xr-x 3 root   root   4096 May 14 06:35 .
+drwxr-xr-x 6 ubuntu ubuntu 4096 May 14 06:33 ..
+drwxr-xr-x 7 root   root   4096 May 14 06:35 .git
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# vi abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# cat abc.txt
+Hello Ashvin Thakur
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        abc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git add abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   abc.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"My first commit
+>
+> ^C
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"My first commit"
+[master (root-commit) f4cbe3c] My first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# vi abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@ip-172-31-6-167:/home/ubuntu/repo# git add abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   abc.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"communicating again to push local repository"
+[master f0cc8be] communicating again to push local repository
+ 1 file changed, 1 insertion(+)
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo# git log
+commit f0cc8be001e8abf956be7560f034b9f0c0f9da5e (HEAD -> master)
+Author: Ashvin Thakur <ashvinkumar.thakur@synechron.com>
+Date:   Tue May 14 06:47:59 2019 +0000
+
+    communicating again to push local repository
+
+commit f4cbe3c8d95d234e9344fd686f8040cdc1e2a4f8
+Author: Ashvin Thakur <ashvinkumar.thakur@synechron.com>
+Date:   Tue May 14 06:44:46 2019 +0000
+
+    My first commit
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch training
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+  training
+root@ip-172-31-6-167:/home/ubuntu/repo# to delete branchy
+to: command not found
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch -d training
+Deleted branch training (was f0cc8be).
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout training
+error: pathspec 'training' did not match any file(s) known to git.
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch training
+root@ip-172-31-6-167:/home/ubuntu/repo# git branch
+* master
+  training
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout training
+Switched to branch 'training'
+root@ip-172-31-6-167:/home/ubuntu/repo# vi xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        xyx.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-6-167:/home/ubuntu/repo# git add .
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   xyx.txt
+
+root@ip-172-31-6-167:/home/ubuntu/repo# git commit -m"trainig brnach commit"
+[training b8e828d] trainig brnach commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 xyx.txt
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch training
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo#
+root@ip-172-31-6-167:/home/ubuntu/repo# git checkout master
+Switched to branch 'master'
+root@ip-172-31-6-167:/home/ubuntu/repo# git status
+On branch master
+nothing to commit, working tree clean
+root@ip-172-31-6-167:/home/ubuntu/repo# ls
+abc.txt
+root@ip-172-31-6-167:/home/ubuntu/repo#
