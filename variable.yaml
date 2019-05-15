@@ -1,0 +1,15 @@
+---
+- hosts: web
+  vars:
+    user1: Thakur
+    user2: Shora
+  tasks:
+    - name: create user {{ user1 }}
+      user:
+        name: "{{ user1 }}"
+        state: present
+    - name: create user {{ user1 }}
+      user:
+        name: "{{ user2 }}"
+        state: present
+

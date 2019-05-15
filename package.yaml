@@ -1,0 +1,13 @@
+
+---
+-  hosts: web
+   tasks:
+     - name: install ntp
+       apt:
+         name: ntp
+         state: present
+     - name: service check
+       service:
+         name: ntp
+         state: stopped 
+
